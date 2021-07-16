@@ -61,7 +61,7 @@ export default function Admin() {
   }
 
   return (
-    <Container>
+    <Container maxWidth="xl">
       <ContainerTitleAndButton>
         <Typography variant="h4">
           Manage Product
@@ -73,7 +73,7 @@ export default function Admin() {
           loading
             ? <SkeletonMediaCard count={8} />
             : products.map((product) =>
-              <Grid item xs={12} sm={6} md={3} lg={3} key={product._id} >
+              <Grid item xs={12} sm={6} md={3} lg={3} xl={2} key={product._id} >
                 <ProductCard data={product} from="admin" />
               </Grid>
               )

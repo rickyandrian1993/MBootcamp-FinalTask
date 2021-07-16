@@ -31,6 +31,7 @@ export default function Login() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const history = useHistory();
 
   const mockRegister = () => {
@@ -52,9 +53,10 @@ export default function Login() {
           <FormContainer>
             <form onSubmit={mockRegister}>
               <Typography variant="h6" style={{textAlign: 'center', marginBottom: 24}}>REGISTRATION</Typography>
-              <FormTextField onChange={(e) => setEmail(e.target.value)} variant="outlined" fullWidth label="Email" />
-              <FormTextField onChange={(e) => setUsername(e.target.value)} variant="outlined" fullWidth label="Username" />
-              <FormTextField onChange={(e) => setPassword(e.target.value)} variant="outlined" fullWidth type="password" label="Password" />
+              <FormTextField onChange={(e) => setEmail(e.target.value)} required variant="outlined" fullWidth label="Email" />
+              <FormTextField onChange={(e) => setUsername(e.target.value)} required variant="outlined" fullWidth label="Username" />
+              <FormTextField onChange={(e) => setPassword(e.target.value)} required variant="outlined" fullWidth type="password" label="Password" />
+              <FormTextField onChange={(e) => setConfirmPassword(e.target.value)} required variant="outlined" fullWidth type="password" label="Confirm Password" error={password !== confirmPassword} />
               <Button type="submit" variant="contained" color="primary" fullWidth>Register</Button>
             </form>
           </FormContainer>

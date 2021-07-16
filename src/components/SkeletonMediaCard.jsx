@@ -10,13 +10,13 @@ import Spacer from '../components/Spacer';
 
 const useStyles = makeStyles((theme) => ({
   card: {
-    maxWidth: 400,
+    maxWidth: 300,
     margin: theme.spacing(2),
     border: '1px solid #a7a7a7',
     borderRadius: 8
   },
   media: {
-    height: 200,
+    height: 250,
     borderRadius: 8,
     objectFit: 'cover',
   }
@@ -31,7 +31,7 @@ export default function SkeletonMediaCard(props) {
   return (
     [...Array(props.count)].map((e, i) => {
       return (
-        <Grid key={i} item xs={12} sm={6} md={3} lg={3}>
+        <Grid item xs={12} sm={6} md={3} lg={3} xl={2} key={i} >
           <Card className={classes.card}>
             <CustomCardConten>
               <Skeleton animation="wave" variant="rect" className={classes.media} />

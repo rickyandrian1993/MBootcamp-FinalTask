@@ -16,7 +16,7 @@ export default function Appbar() {
   }
 
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" style={{backgroundColor: '#3C5186', boxShadow: '#808070'}}>
       <Toolbar>
         <Link to="/" style={{textDecoration: 'none', color: 'inherit'}}>
           <Typography variant="h6" noWrap>

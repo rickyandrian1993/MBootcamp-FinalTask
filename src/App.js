@@ -16,16 +16,18 @@ function App() {
   return (
     <Provider store={store}>
       <Router history={history}>
-        <Appbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/cart" component={Cart} />
-          <Route path="/login" component={Login} />
-          <Route path="/products" component={Home} />
-          <Route path="/registration" component={Registration} />
-          <ProtectedRoute path="/admin" component={Admin} />
-          <Login />
-        </Switch>
+        {/* <ThemeProvider theme={theme}> */}
+          <Appbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/cart" component={Cart} />
+            <Route path="/login" component={Login} />
+            <Route path="/products" component={Home} />
+            <Route path="/registration" component={Registration} />
+            <ProtectedRoute path="/admin" component={Admin} />
+            <Login />
+          </Switch>
+        {/* </ThemeProvider> */}
       </Router>
     </Provider>
   );

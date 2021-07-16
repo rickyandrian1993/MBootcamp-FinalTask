@@ -42,7 +42,6 @@ export default function ProductCard(props) {
   }
 
   const handleRemoveCart = (id) => {
-    
     dispatch(removeFromCart(id));
   }
 
