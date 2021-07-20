@@ -6,7 +6,7 @@ import Loading from './Loading';
 
 export default function ProtectedRoute({path, component: Component, ...props}) {
   const isLoggedIn = useSelector(state => state.auth.isLoggedIn);
-  const loading = useSelector(state => state.auth.isLoading);
+  const isLoading = useSelector(state => state.auth.isLoading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export default function ProtectedRoute({path, component: Component, ...props}) {
 
   return (
     <Route {...props} path={path} render={(props) =>
-      loading 
+      isLoading 
         ? <Loading />
         : isLoggedIn 
           ? <Component {...props} /> 

@@ -20,7 +20,7 @@ export default function Appbar() {
       <Toolbar>
         <Link to="/" style={{textDecoration: 'none', color: 'inherit'}}>
           <Typography variant="h6" noWrap>
-            EP Store
+            Eight Pajamas
           </Typography>
         </Link>
         <Spacer />

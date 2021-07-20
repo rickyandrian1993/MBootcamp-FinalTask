@@ -2,6 +2,7 @@ import api from '../../../api';
 import { productReducerActionTypes } from "./reducer";
 import handleError from '../../../helpers/handleError';
 import handleToastNotif from '../../../helpers/handleNotifToast';
+import Swal from 'sweetalert2';
 
 export const addProduct = (name, description, price, image) => {
   return (dispatch) => {
@@ -31,8 +32,16 @@ export const deleteProduct = (id) => {
     return new Promise(async () => {
       dispatch({type: productReducerActionTypes.LOADING, data: true});
       try {
-        await api.delete(`/products/${id}`);
-        handleToastNotif('success', 'Product has been deleted');
+        // Swal.fire({
+        //   title: 'Do you want to delete this product?',
+        //   showCancelButton: true,
+        //   confirmButtonText: 'Delete',
+        // }).then(async (result) => {
+        //   if (result.isConfirmed) {
+            await api.delete(`/products/${id}`);
+            handleToastNotif('success', 'Product has been deleted');
+          // }
+        // });
       } catch (error) {
         handleError(error);
       } finally {

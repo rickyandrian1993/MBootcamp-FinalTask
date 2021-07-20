@@ -69,7 +69,8 @@ export default function Login() {
               <Button type="submit" variant="contained" color="primary" fullWidth>Login</Button>
               <div style={{display: 'flex', justifyContent: 'space-between', marginTop: 20}}>
                 <GoogleLogin
-                  clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                  // clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                  clientId="414246971210-5ibga2hqsb9cckfmn072htg80p82c52d.apps.googleusercontent.com"
                   buttonText="Log in with Google"
                   onSuccess={handleSucess}
                   onFailure={handleFailure}

@@ -11,6 +11,7 @@ import { register } from '../hooks/store/auth/actions';
 import { useHistory } from 'react-router-dom';
 import Loading from '../components/Loading';
 import Centered from '../components/Centered';
+import handleError from '../helpers/handleError';
 
 const FormContainer = withStyles({
   root: {
@@ -35,15 +36,18 @@ export default function Login() {
   const history = useHistory();
 
   const mockRegister = () => {
-    dispatch(
-      register(
-        email,
-        username, 
-        password,
-      )
-    ).then(() => {
+    if (password !== confirmPassword) {
+      handleError({response: {data: {error_message: "Password and Confirm Password did not match"}}})
+    } else {
+      dispatch(
+        register(
+          email,
+          username, 
+          password,
+        )
+      );
       history.push('/login');
-    });
+    }
   }
 
   return (
